@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer hover:-translate-y-1">
     <img class="w-full h-48" :src="country.flag" alt="Sunset in the mountains">
-    <div class="px-6 py-4">
+    <div class="px-6 py-4 bg-white">
       <div class="font-bold text-xl mb-2">{{ country.name }}</div>
       <p class="text-gray-700 font-bold text-base">
         Population:

@@ -1,14 +1,22 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { Country } from '@/interfaces/Country.interface'
-import data from "../data/data.json";
+import data from "@/data/data.json";
 
 export const useContryStore = defineStore('contry', () => {
-  const countries = ref<Country[]>(data as Country[]);
+  const countries = ref<Country[]>([]);
 
-  const getCountriesFilter = (filter: {}) => countries.value.filter(() => filter);
+  const initializeCountries = () => {
+    countries.value = data as Country[];
+  };
 
-  const getCountryByName = (name: string) => countries.value.filter(c => c.name === name);
+  const getCountriesFilter = (filter: {}) => {
+    countries.value = countries.value.filter(() => filter);
+  }
 
-  return { countries, getCountriesFilter, getCountryByName }
+  const getCountryByName = (name: string) => countries.value.find(c => c.name === name);
+
+  initializeCountries();
+
+  return { countries,  getCountriesFilter, getCountryByName }
 })
