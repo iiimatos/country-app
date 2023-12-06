@@ -1,9 +1,11 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <SectionCountries :countries="countries" />
 </template>
+
+<script setup lang="ts">
+import SectionCountries from '@/components/SectionCountries.vue';
+import { useContryStore } from '@/stores/countryStore';
+
+const { countries } = useContryStore();
+
+</script>
