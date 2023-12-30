@@ -1,6 +1,8 @@
 <template>
   <div class="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer hover:-translate-y-1">
-    <img class="w-full h-48" :src="country.flag" alt="Sunset in the mountains">
+    <div class="w-full h-40">
+      <img class="w-full h-full" :src="country.flag" :alt="country.name" />
+    </div>
     <div class="px-6 py-4 bg-white">
       <div class="font-bold text-xl mb-2">{{ country.name }}</div>
       <p class="text-gray-700 font-bold text-base">
@@ -26,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Country } from '@/interfaces/Country.interface';
+import type { Country } from '@/interfaces/Country.interface'
 
 interface Props {
   country: Country
 }
 
-const { country } = defineProps<Props>();
+const { country } = defineProps<Props>()
 </script>

@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <main class="container mx-auto mt-10 px-4 md:px-0">
+  <main class="container mx-auto mt-10 mb-5 px-4 md:px-0">
     <RouterView />
   </main>
 </template>
